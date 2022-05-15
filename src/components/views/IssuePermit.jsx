@@ -9,14 +9,21 @@ export default function IssuePermit() {
   const [lname, setLname] = useState("");
   const [id, setId] = useState(0);
   const [tel, setTel] = useState(0);
+  const [email, setEmail] = useState("");
   const [dob, setDob] = useState("");
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
   const [zip, setZip] = useState(0);
+  const [issueList, setIssueList] = useState([]);
+  const [exp, setExp] = useState("");
+  const [color, setColor] = useState("");
+  const [make, setMake] = useState("");
+  const [model, setModel] = useState("");
+  const [plate, setPlate] = useState("");
 
-  const [personList, setPersonList] = useState([]);
+  console.log(dob);
 
-  const addPerson = () => {
+  const issuePermit = () => {
     Axios.post("http://localhost:3001/create", {
       type_id: type_id,
       fname: fname,
@@ -24,13 +31,19 @@ export default function IssuePermit() {
       lname: lname,
       id: id,
       tel: tel,
+      email: email,
       dob: dob,
       street: street,
       city: city,
-      zip: zip
+      zip: zip,
+      exp: exp,
+      color: color,
+      make: make,
+      model: model,
+      plate: plate
     }).then(() => {
-      setPersonList([
-        ...personList,
+      setIssueList([
+        ...issueList,
         {
           type_id: type_id,
           fname: fname,
@@ -38,13 +51,18 @@ export default function IssuePermit() {
           lname: lname,
           id: id,
           tel: tel,
+          email: email,
           dob: dob,
           street: street,
           city: city,
-          zip: zip
+          zip: zip,
+          exp: exp,
+          color: color,
+          make: make,
+          model: model,
+          plate: plate
         },
       ]);
-      console.log("succ");
     });
   };
 
@@ -54,6 +72,7 @@ export default function IssuePermit() {
       <div className="issue">
         <h1>Issue a new permit</h1>
         <div className="issue__form">
+          {/* Create Person: */}
           <div className="issue__form__field">
             <label>Permit type:</label>
               <select id="type_id"
@@ -100,6 +119,13 @@ export default function IssuePermit() {
             }} />
           </div>
           <div className="issue__form__field">
+            <label>Email:</label>
+            <input type="text" name="email"
+            onChange={(event) => {
+              setEmail(event.target.value)
+            }} />
+          </div>
+          <div className="issue__form__field">
             <label>Date of birth:</label>
             <input type="date" name="dob"
             onChange={(event) => {
@@ -123,9 +149,39 @@ export default function IssuePermit() {
               setZip(event.target.value)
             }}/>
           </div>
+
+          {/* Create Permit: */}
+          <div className="issue__form__field">
+            <label>Expiration date:</label>
+            <input type="date" name="expiry"
+            onChange={(event) => {
+              setExp(event.target.value)
+            }} />
+          </div>
+
+          <div className="issue__form__field">
+            <label>Vehicle:</label><br/>
+            <label>Color:</label>
+            <input type="text" name="color"
+            onChange={(event) => setColor(event.target.value)}
+            /><br/>
+            <label>Make:</label>
+            <input type="text" name="make"
+            onChange={(event) => setMake(event.target.value)}
+            /><br/>
+            <label>Model:</label>
+            <input type="text" name="model" 
+            onChange={(event) => setModel(event.target.value)}
+            /><br/>
+            <label>Plate no:</label>
+            <input type="text" name="plate" 
+            onChange={(event) => setPlate(event.target.value)}
+            /><br/>
+          </div>
+
           <div className="issue__form__field">
             <button
-            onClick={addPerson}>Submit</button>
+            onClick={issuePermit}>Submit</button>
           </div>
         </div>
       </div>

@@ -3,14 +3,15 @@ import { useState } from 'react';
 import Axios from 'axios';
 
 export default function Holders() {
-  const [personList, setPersonList] = useState([]);
+  const [holdersList, setHoldersList] = useState([]);
 
   const getPerson = () => {
     Axios.get("http://localhost:3001/holders").then((response) => {
-      setPersonList(response.data);
+      setHoldersList(response.data);
     })
   }
 
+  getPerson();
   return (
     <>
       <div className="holders">
@@ -21,23 +22,28 @@ export default function Holders() {
               <td>Name</td>
               <td>ID</td>
               <td>Phone</td>
+              <td>Email</td>
               <td>Permit type</td>
               <td>Expiration date</td>
-              <td>Validity</td>
+              {/* <td>Validity</td> */}
               <td>Permit number</td>
               <td>Vehicle</td>
-              <td>Pending violations</td>
+              {/* <td>Pending violations</td> */}
             </tr>
           </thead>
-          {personList.map((val, key) => {
+          {holdersList.map((val, key) => {
             return <tbody>
-              <td>{val.fname}</td>
+              <td>{val.fname + ' ' + val.minit + '. ' + val.lname}</td>
               <td key={val.id}>{val.id}</td>
               <td>{val.tel}</td>
+              <td>{val.email}</td>
+              <td>{val.perm_type}</td>
+              <td>{val.expiry_date}</td>
+              <td>{val.perm_id}</td>
+              <td>{val.make + " " + val.model}</td>
             </tbody>
           })}
         </table>
-        <button onClick={getPerson}>Get data</button>
       </div>
     </>
   )
