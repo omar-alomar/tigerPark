@@ -1,0 +1,14 @@
+.garages {
+    margin: 0.5rem;
+}
+
+.garages table {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.garages th, td {
+    border: 1px solid;
+    padding: 0.3rem;
+
+}

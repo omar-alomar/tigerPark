@@ -1,0 +1,14 @@
+.holders {
+    margin: 0.5rem;
+}
+
+.holders__table {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.holders__table th, td {
+    border: 1px solid;
+    padding: 0.3rem;
+
+}

@@ -1,0 +1,14 @@
+.types {
+    margin: 0.5rem;
+}
+
+.types table {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.types th, td {
+    border: 1px solid;
+    padding: 0.3rem;
+
+}

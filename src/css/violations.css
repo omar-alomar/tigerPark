@@ -1,0 +1,14 @@
+.violations {
+    margin: 0.5rem;
+}
+
+.violations table {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.violations th, td {
+    border: 1px solid;
+    padding: 0.3rem;
+
+}

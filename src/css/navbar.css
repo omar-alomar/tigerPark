@@ -1,0 +1,13 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: #151500;
+    width: 20%;
+    height: 95vh;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #C0C0C0;
+    padding: 0.5rem;
+}

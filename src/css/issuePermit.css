@@ -1,0 +1,31 @@
+.issue {
+    margin: 0.5rem;
+}
+
+.issue__form {
+    padding: 0.5rem;
+}
+
+.issue__form__field {
+    padding: 0.5rem;
+}
+
+.issue__form__field label {
+    padding-right: 0.3rem;
+}
+
+.issue__form__field input {
+    margin-right: 0.7rem;
+}
+
+.issue__form__field button {
+    padding: 0.7rem;
+    padding-right: 1.3rem;
+    padding-left: 1.3rem;
+    font-size: 1.1rem;
+}
+
+.issue__form__field button:hover {
+    cursor: pointer;
+}
+
