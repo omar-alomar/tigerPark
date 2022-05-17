@@ -6,7 +6,7 @@ export default function PermitTypes() {
     const [typesList, setHoldersList] = useState([]);
 
   const getTypes = () => {
-    Axios.get("http://localhost:3001/types").then((response) => {
+    Axios.get("https://tiger-park.herokuapp.com//types").then((response) => {
       setHoldersList(response.data);
     })
   }

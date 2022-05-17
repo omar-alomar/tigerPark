@@ -6,7 +6,7 @@ export default function Violations() {
   const [violationList, setViolationList] = useState([]);
 
   const getViolations = () => {
-    Axios.get("http://localhost:3001/violation").then((response) => {
+    Axios.get("https://tiger-park.herokuapp.com//violation").then((response) => {
       setViolationList(response.data);
     })
   }

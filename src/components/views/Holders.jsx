@@ -6,13 +6,13 @@ export default function Holders() {
   const [holdersList, setHoldersList] = useState([]);
 
   const getPerson = () => {
-    Axios.get("http://localhost:3001/holders").then((response) => {
+    Axios.get("https://tiger-park.herokuapp.com//holders").then((response) => {
       setHoldersList(response.data);
     })
   }
 
   const deleteHolder = (id) => {
-    Axios.delete(`http://localhost:3001/deleteholder/${id}`).then((response) => {
+    Axios.delete(`https://tiger-park.herokuapp.com//deleteholder/${id}`).then((response) => {
       setHoldersList(holdersList.filter((val) => {
         return val.id !== id;
       }));
