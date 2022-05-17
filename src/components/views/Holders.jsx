@@ -20,7 +20,6 @@ export default function Holders() {
     
   }
 
-  const editHolder
   getPerson();
 
   return (
