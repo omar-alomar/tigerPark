@@ -9,6 +9,7 @@ import Holders from './components/views/Holders';
 import PermitTypes from './components/views/PermitTypes';
 import Garages from './components/views/Garages';
 import Violations from './components/views/Violations';
+import Permits from './components/views/Permits';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/types" element={<PermitTypes />} />
             <Route path="/garages" element={<Garages />} />
             <Route path="/violations" element={<Violations />} />
+            <Route path="/permits" element={<Permits />} />
         </Routes>
       </div>
     </div>

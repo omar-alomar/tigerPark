@@ -1,0 +1,14 @@
+.permits {
+    margin: 0.5rem;
+}
+
+.permits table {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.permits th, td {
+    border: 1px solid;
+    padding: 0.3rem;
+
+}

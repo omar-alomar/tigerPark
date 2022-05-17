@@ -11,11 +11,22 @@ export default function Holders() {
     })
   }
 
+  const deleteHolder = (id) => {
+    Axios.delete(`http://localhost:3001/deleteholder/${id}`).then((response) => {
+      setHoldersList(holdersList.filter((val) => {
+        return val.id !== id;
+      }));
+    });
+    
+  }
+
+  const editHolder
   getPerson();
+
   return (
     <>
       <div className="holders">
-        <h1>View all permit-holders</h1>
+        <h1>Overview of permit-holders:</h1>
         <table className="holders__table">
           <thead>
             <tr>
@@ -28,6 +39,7 @@ export default function Holders() {
               {/* <td>Validity</td> */}
               <td>Permit number</td>
               <td>Vehicle</td>
+              <td>Actions</td>
               {/* <td>Pending violations</td> */}
             </tr>
           </thead>
@@ -41,6 +53,10 @@ export default function Holders() {
               <td>{val.expiry_date}</td>
               <td>{val.perm_id}</td>
               <td>{val.make + " " + val.model}</td>
+              <td>
+                <button className="btn btn--delete" onClick={() => {deleteHolder(val.id)}}>Delete</button>
+                <button className="btn btn--edit">Edit</button>
+              </td>
             </tbody>
           })}
         </table>

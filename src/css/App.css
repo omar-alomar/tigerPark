@@ -6,6 +6,7 @@
 @import "garages.css";
 @import "permitTypes.css";
 @import "violations.css";
+@import "permits.css";
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
@@ -25,4 +26,16 @@ body {
 .app__container {
   display: flex;
   flex-direction: row;
+}
+
+.btn {
+  padding: 0.2rem;
+  margin: 0.15rem;
+  background-color: #FFBB00;
+  border: 1px solid;
+}
+
+.btn:hover {
+  cursor: pointer;
+  
 }

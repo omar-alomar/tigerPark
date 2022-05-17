@@ -1,6 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { useState } from 'react';
+import Axios from 'axios';
 
 export default function Violations() {
+  const [violationList, setViolationList] = useState([]);
+
+  const getViolations = () => {
+    Axios.get("http://localhost:3001/violation").then((response) => {
+      setViolationList(response.data);
+    })
+  }
+  
+  getViolations();
+
   return (
     <>
       <div className="violations">
@@ -16,6 +28,12 @@ export default function Violations() {
                 <td>Reason</td>
               </tr>
             </thead>
+            {violationList.map((val, key) => {
+              return <tbody>
+                <td key={val.vio_id}>{val.vio_id}</td>
+                <td>{val.plate}</td>
+              </tbody>
+            })}
           </table>
       </div>
     </>

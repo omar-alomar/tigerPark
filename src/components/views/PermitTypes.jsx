@@ -1,6 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { useState } from 'react';
+import Axios from 'axios';
 
 export default function PermitTypes() {
+    const [typesList, setHoldersList] = useState([]);
+
+  const getTypes = () => {
+    Axios.get("http://localhost:3001/types").then((response) => {
+      setHoldersList(response.data);
+    })
+  }
+  getTypes();
   return (
     <>
       <div className="types">
@@ -15,19 +25,14 @@ export default function PermitTypes() {
                 <td>Permits remaining</td>
               </tr>
             </thead>
+            {typesList.map((val, key) => {
+              return <tbody>
+                <td>{val.perm_type}</td>
+                <td>{val.daily_cost}</td>
+              </tbody>
+            })}
           </table>
           <br/>
-          <table>
-          <thead>
-              <tr>
-                <td>Permit id</td>
-                <td>Holder name</td>
-                <td>Permit type</td>
-                <td># of vehicles</td>
-                <td>Restrictions</td>
-              </tr>
-            </thead>
-          </table>
       </div>
     </>
   )

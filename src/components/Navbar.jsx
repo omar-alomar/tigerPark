@@ -8,6 +8,7 @@ export default function Navbar() {
         <Link to={"/"} className="navbar__link">Home</Link>
         <Link to={"/issue"} className="navbar__link">Issue a permit</Link>
         <Link to={"/holders"} className="navbar__link">Manage permit holders</Link>
+        <Link to={"/permits"} className="navbar__link">Manage permits</Link>
         <Link to={"/types"} className="navbar__link">Manage permit types</Link>
         <Link to={"/garages"} className="navbar__link">Garage details</Link>
         <Link to={"/violations"} className="navbar__link">Parking violations</Link>
