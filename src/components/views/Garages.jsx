@@ -6,7 +6,7 @@ export default function Garages() {
   const [garagesList, setGaragesList] = useState([]);
   
   const getGarages = () => {
-    Axios.get("https://tiger-park.herokuapp.com//garages").then((response) => {
+    Axios.get("https://tiger-park.herokuapp.com/garages").then((response) => {
       setGaragesList(response.data);
     })
   }

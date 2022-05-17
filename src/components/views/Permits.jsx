@@ -6,7 +6,7 @@ export default function Permits() {
   const [permitList, setPermitList] = useState([]);
 
   const getPermits = () => {
-    Axios.get("https://tiger-park.herokuapp.com//permits").then((response) => {
+    Axios.get("https://tiger-park.herokuapp.com/permits").then((response) => {
       setPermitList(response.data);
     })
   }

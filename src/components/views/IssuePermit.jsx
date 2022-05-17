@@ -24,7 +24,7 @@ export default function IssuePermit() {
   console.log(dob);
 
   const issuePermit = () => {
-    Axios.post("https://tiger-park.herokuapp.com//create", {
+    Axios.post("https://tiger-park.herokuapp.com/create", {
       type_id: type_id,
       fname: fname,
       minit: minit,
